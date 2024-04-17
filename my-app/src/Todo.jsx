@@ -1,6 +1,12 @@
+import { useState } from "react";
 import "./style.css";
 
 export const Todo =()=> {
+
+  const [incomplateTodos,setIncomplateTodos] = useState([
+    "todoです",
+    "todoです2"
+  ]);
 
   return (
 
@@ -16,20 +22,19 @@ export const Todo =()=> {
       <div className="incomplate-area">
         <p className="title">未完了のtodo</p>
         <ul>
-              <li>
+          {incomplateTodos.map((todo) => {
+            return(
+              <li key ={todo} >
                   <div className="list-row">
-                    <p className="todo-item">todoです</p>
+                    <p className="todo-item">{todo}</p>
                     <button>完了</button>
                     <button>削除</button>
                   </div>
               </li>
-              <li>
-                  <div className="list-row">
-                    <p className="todo-item">todoです</p>
-                    <button>完了</button>
-                    <button>削除</button>
-                  </div>
-              </li>
+            );
+
+          }) }
+
         </ul>
       </div>
 
@@ -63,16 +68,4 @@ export const Todo =()=> {
 
   );
 };
-
-
-// truthy,falthyについて
-// "abc" 0 10 undefined null false NaN "" [] {}
-
-const val = 0 ;
-if (val){
-  console.log("valはtruthyです");
-}else {
-    console.log("valはfalthyです");
-  }
-
 
