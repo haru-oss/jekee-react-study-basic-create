@@ -24,8 +24,7 @@ export const Todo =()=> {
       <div className="incomplate-area">
         <p className="title">未完了のtodo</p>
         <ul>
-          {incomplateTodos.map((todo) => {
-            return(
+          {incomplateTodos.map((todo) => (
               <li key ={todo} >
                   <div className="list-row">
                     <p className="todo-item">{todo}</p>
@@ -33,9 +32,9 @@ export const Todo =()=> {
                     <button>削除</button>
                   </div>
               </li>
-            );
+            )
 
-          }) }
+          ) }
 
         </ul>
       </div>
