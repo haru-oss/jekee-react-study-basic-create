@@ -6,9 +6,13 @@ export const Todo =()=> {
   const [incomplateTodos,setIncomplateTodos] = useState([
     "todoです",
     "todoです2",
-    "todoです3",
-    "todoです4",
   ]);
+
+  const [complateTodos,setComplateTodos] = useState([
+                       "todoでした",
+                       "todoでした2"
+                       ]);
+
 
   return (
 
@@ -32,6 +36,9 @@ export const Todo =()=> {
                     <button>削除</button>
                   </div>
               </li>
+
+
+
             )
 
           ) }
@@ -41,22 +48,23 @@ export const Todo =()=> {
 
 
 
+
+
       <div className = "complate-area">
         <p className="title">完了のtodo</p>
         <ul>
-          <div>
-             <li className="list-row">
-               <p className="todo-item">todoでした</p>
-               <button>戻す</button>
-             </li>
-          </div>
+            {complateTodos.map((Todo) => (
 
-          <div>
-             <li className="list-row">
-               <p className="todo-item">todoでした</p>
-               <button>戻す</button>
-             </li>
-          </div>
+              <li key ={Todo} >
+                    <div className="list-row">
+                      <p className="todo-item">{Todo}</p>
+                      <button>戻す</button>
+                    </div>
+              </li>
+                 )
+                )
+            }
+
 
         </ul>
       </div>
