@@ -1,51 +1,57 @@
 import "./style.css";
 
 export const Todo =()=> {
+
   return (
 
      <>
 
-      <div>
+      <div className="input-area">
         <input placeholder="Todoを入力" />
-        <buttonv>追加</buttonv>
+        <button>追加</button>
 
       </div>
 
 
-      <div>
-        <p>未完了のtodo</p>
+      <div className="incomplate-area">
+        <p className="title">未完了のtodo</p>
         <ul>
-          <li>
-            <p>todoです</p>
-            <button>完了</button>
-            <button>削除</button>
-          </li>
-
-
-          <li>
-            <p>todoです</p>
-            <button>完了</button>
-            <button>削除</button>
-          </li>
+              <li>
+                  <div className="list-row">
+                    <p className="todo-item">todoです</p>
+                    <button>完了</button>
+                    <button>削除</button>
+                  </div>
+              </li>
+              <li>
+                  <div className="list-row">
+                    <p className="todo-item">todoです</p>
+                    <button>完了</button>
+                    <button>削除</button>
+                  </div>
+              </li>
         </ul>
       </div>
 
 
 
-      <div>
-        <p>完了のtodo</p>
+      <div className = "complate-area">
+        <p className="title">完了のtodo</p>
         <ul>
-          <li>
-            <p>todoでした</p>
-            <button>戻す</button>
-          </li>
+          <div>
+             <li className="list-row">
+               <p className="todo-item">todoでした</p>
+               <button>戻す</button>
+             </li>
+          </div>
 
+          <div>
+             <li className="list-row">
+               <p className="todo-item">todoでした</p>
+               <button>戻す</button>
+             </li>
+          </div>
 
-          <li>
-            <p>todoでした</p>
-            <button>戻す</button>
-
-          </li>
         </ul>
       </div>
 
@@ -57,5 +63,16 @@ export const Todo =()=> {
 
   );
 };
+
+
+// truthy,falthyについて
+// "abc" 0 10 undefined null false NaN "" [] {}
+
+const val = 0 ;
+if (val){
+  console.log("valはtruthyです");
+}else {
+    console.log("valはfalthyです");
+  }
 
 
