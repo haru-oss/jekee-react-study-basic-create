@@ -5,7 +5,9 @@ export const Todo =()=> {
 
   const [incomplateTodos,setIncomplateTodos] = useState([
     "todoです",
-    "todoです2"
+    "todoです2",
+    "todoです3",
+    "todoです4",
   ]);
 
   return (
