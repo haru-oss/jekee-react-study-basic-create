@@ -18,6 +18,7 @@ export const Todo =()=> {
 
 
   const onChangeTodoText =  (event) => setTodoText(event.target.value);
+
 // onchangeなどのイベントが発火すると、「eventという引数が渡ってくるようになっている。」
 
   const onClickAdd = () => {
