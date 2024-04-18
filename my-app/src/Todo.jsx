@@ -21,6 +21,7 @@ export const Todo =()=> {
 // onchangeなどのイベントが発火すると、「eventという引数が渡ってくるようになっている。」
 
   const onClickAdd = () => {
+    if (todoText === "")return;
     const newTodos = [...incomplateTodos,todoText];
     setIncomplateTodos(newTodos);
     setTodoText("");
