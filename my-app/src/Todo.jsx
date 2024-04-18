@@ -10,7 +10,6 @@ export const Todo =()=> {
     "todoです2",
   ]);
 
-  console.log(todoText);
 
   const [complateTodos,setComplateTodos] = useState([
                        "todoでした",
@@ -21,13 +20,19 @@ export const Todo =()=> {
   const onChangeTodoText =  (event) => setTodoText(event.target.value);
 // onchangeなどのイベントが発火すると、「eventという引数が渡ってくるようになっている。」
 
+  const onClickAdd = () => {
+    const newTodos = [...incomplateTodos,todoText];
+    setIncomplateTodos(newTodos);
+    setTodoText("");
+  };
+
   return (
 
      <>
 
       <div className="input-area">
         <input placeholder="Todoを入力" value={todoText} onChange={onChangeTodoText} />
-        <button>追加</button>
+        <button onClick={onClickAdd}>追加</button>
 
       </div>
 
