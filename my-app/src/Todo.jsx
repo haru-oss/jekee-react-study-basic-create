@@ -28,6 +28,21 @@ export const Todo =()=> {
     setTodoText("");
   };
 
+
+const onClickDelete = (geri) => {
+  const newTodos = [...incomplateTodos];
+  newTodos.splice(geri,1);
+  // 特定の配列の何番目の要素から何個削除するおいうメソッド
+//  geri番目押されたら、geri番目の要素から１個削除する。
+  setIncomplateTodos(newTodos);
+
+};
+
+const g = (index) => {
+  alert(index);
+};
+
+
   return (
 
      <>
@@ -35,7 +50,6 @@ export const Todo =()=> {
       <div className="input-area">
         <input placeholder="Todoを入力" value={todoText} onChange={onChangeTodoText} />
         <button onClick={onClickAdd}>追加</button>
-
       </div>
 
 {/* onchangeってなんだ？ 　＝>  テキストボックスに変更があった時に発火するイベント*/}
@@ -45,12 +59,12 @@ export const Todo =()=> {
       <div className="incomplate-area">
         <p className="title">未完了のtodo</p>
         <ul>
-          {incomplateTodos.map((todo) => (
+          {incomplateTodos.map((todo,geri) => (
               <li key ={todo} >
                   <div className="list-row">
                     <p className="todo-item">{todo}</p>
                     <button>完了</button>
-                    <button>削除</button>
+                    <button onClick={() => onClickDelete(geri)}>削除</button>
                   </div>
               </li>
 
@@ -70,12 +84,12 @@ export const Todo =()=> {
       <div className = "complate-area">
         <p className="title">完了のtodo</p>
         <ul>
-            {complateTodos.map((Todo) => (
+            {complateTodos.map((Todo,index) => (
 
               <li key ={Todo} >
                     <div className="list-row">
                       <p className="todo-item">{Todo}</p>
-                      <button>戻す</button>
+                      <button onClick={()=> g(index)}>戻す</button>
                     </div>
               </li>
                  )
@@ -88,8 +102,8 @@ export const Todo =()=> {
 
 
 
-    </>
 
+    </>
 
 
   );
